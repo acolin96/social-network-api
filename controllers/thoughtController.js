@@ -12,10 +12,10 @@ module.exports = {
 
     async gatherOneThought(req, res) {
         try {
-        const thought = await Thoughts.findOne({ _id: req.params.thoughtId })
-            .select('-__v');
+        const thought = await Thoughts.findOne({ _id: req.params.thoughtId });
+            
         if (!thought) {
-            return res.status(404).json({ message: 'No comment found' });
+            return res.status(404).json({ message: 'No thought found' });
         }
         res.status(200).json(thought);
     } catch (err) {
@@ -32,7 +32,7 @@ async createThought(req, res) {
                 _id: req.body.userId
             },
             {
-                
+
             }
         )
     }
