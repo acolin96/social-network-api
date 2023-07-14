@@ -1,4 +1,3 @@
-const { Timestamp } = require('bson');
 const { Schema, Types } = require('mongoose');
 
 const reactionSchema = new Schema(
@@ -13,7 +12,7 @@ const reactionSchema = new Schema(
         maxlength: 480,
       },
       username: {
-        Type: String,
+        type: String,
         required: true,
       },
       createdAt: {

@@ -1,4 +1,4 @@
-const username =
+const usernames =
 [
     "Cloud Strife",
     "Tifa Lockhart",
@@ -12,7 +12,7 @@ const username =
     "Noctis Lucis Caelum"
   ];
 
-const email =
+const emails =
 [
     "cloudstrife@example.com",
     "tifalockhart@example.com",
@@ -25,4 +25,5 @@ const email =
     "lightningfarron@example.com",
     "noctislucis@example.com"
   ]
-  
+
+  module.exports = { usernames, emails };
