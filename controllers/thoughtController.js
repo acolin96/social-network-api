@@ -4,8 +4,10 @@ module.exports = {
     async gatherThoughts(req, res) {
         try {
             const thoughts = await Thoughts.find();
+           
             res.status(200).json(thoughts);
         } catch (error) {
+          
             res.status(500).json(error);
         }
     },
@@ -66,7 +68,7 @@ async deleteThought(req, res) {
 async addReaction(req, res) {
     try {
         const thought = await Thoughts.findOneAndUpdate({ _id: req.params.thoughtId },
-            { $push: { reactions: req.body } },
+            { $addToSet: { reactions: req.body } },
             { new: true, runValidators: true }
         );
         if (!thought) {
